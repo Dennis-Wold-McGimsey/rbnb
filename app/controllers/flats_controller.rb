@@ -4,6 +4,9 @@ class FlatsController < ApplicationController
     @flats = Flat.all
   end
 
+  def show
+    @flat = Flat.find(params[:id])
+  end
 
   def new
     @flat = Flat.new # Needed to instantiate the form_with
@@ -18,10 +21,7 @@ class FlatsController < ApplicationController
     end
   end
 
- 
-  def show
-    @flat = Flat.find(params[:id])
-  end
+
 
   def destroy
     @flat = Flat.find(params[:id])
