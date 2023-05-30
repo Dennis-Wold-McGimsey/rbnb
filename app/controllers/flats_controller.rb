@@ -5,6 +5,20 @@ class FlatsController < ApplicationController
   end
 
 
+  def new
+    @flat = Flat.new # Needed to instantiate the form_with
+  end
+
+  def create
+    @flat = Flat.new(flat_params)
+    if @flat.save
+      redirect_to @flat, notice: "Restaurant was successfully created."
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+ 
   def show
     @flat = Flat.find(params[:id])
   end
@@ -14,5 +28,12 @@ class FlatsController < ApplicationController
     @flat.destroy
     redirect_to flats_path(@flat.list), notice: "Flat was successfully removed."
   end
+
+  private
+
+  def flat_params
+    params.require(:flat).permit(:address, :description, :price_per_day, :photo)
+  end
+
 
 end
