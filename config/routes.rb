@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "flats#index"
 
   resources :flats
+  get "my_flats", to: "flats#my_flats"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
