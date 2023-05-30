@@ -14,6 +14,7 @@ class FlatsController < ApplicationController
 
   def create
     @flat = Flat.new(flat_params)
+
     if @flat.save
       redirect_to @flat, notice: "Flat was successfully created."
     else
@@ -30,7 +31,7 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:address, :description, :price_per_day, :photo)
+    params.require(:flat).permit(:address, :description, :price_per_day, :guests_allowed)
   end
 
 end

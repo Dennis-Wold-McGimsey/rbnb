@@ -1,20 +1,16 @@
+<P>Description : <%= @flat.description %><P>
+<P> Address : <%= @flat.address %><P>
+<P> Price per day : <%= @flat.price_per_day %><P>
+<P>Guests allowed : <%= @flat.guests_allowed %><P>
+  
+ <% if @flat.photo.present? %>
+   <div class="user_flat_images" style="background-image: url('<%= cl_image_path @flat.photo.key, height: 300, crop: :fill %>')"></div>
+ <% end %>
+  <hr>
 
-<h2><%= @flat.description %></h2>
-
-  <%= @flat.address %>
-  <p>
-  <%= @flat.price_per_day %>
-  </p>
-  <%= @flat.availability %>
-  <p>
-  <%= @flat.photos_id %>
-  </p>
-  <% if @flat.photo.present? %>
-    <div class="user_flat_images" style="background-image: url('<%= cl_image_path @flat.photo.key, height: 300, crop: :fill %>')"></div>
-  <% end %>
   <%= link_to "Delete", flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   <hr>
 
-<p>
+
 <%=  link_to "Go back to Home page", flats_path%>
-</p>
+  <hr>
