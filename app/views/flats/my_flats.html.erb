@@ -1,0 +1,10 @@
+<p>Hello world </p>
+
+<div class="container">
+  <ul>
+    <% @flats.each do |flat| %>
+    <li>
+    <%= link_to flat.address, flat_path(flat)%>
+    </li>
+    <% end %>
+  </ul>
