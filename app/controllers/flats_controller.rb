@@ -2,6 +2,11 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.all
+
+  end
+
+  def my_flats
+    @flats = Flat.where(user_id: current_user.id)
   end
 
   def show
@@ -14,6 +19,7 @@ class FlatsController < ApplicationController
 
   def create
     @flat = Flat.new(flat_params)
+    @flat.user = current_user
 
     if @flat.save
       redirect_to @flat, notice: "Flat was successfully created."
