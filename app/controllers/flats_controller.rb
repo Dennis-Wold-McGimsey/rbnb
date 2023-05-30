@@ -15,18 +15,16 @@ class FlatsController < ApplicationController
   def create
     @flat = Flat.new(flat_params)
     if @flat.save
-      redirect_to @flat, notice: "Restaurant was successfully created."
+      redirect_to @flat, notice: "Flat was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-
-
   def destroy
     @flat = Flat.find(params[:id])
     @flat.destroy
-    redirect_to flats_path(@flat.list), notice: "Flat was successfully removed."
+    redirect_to flats_path(@flat), notice: "Flat was successfully removed."
   end
 
   private
@@ -34,6 +32,5 @@ class FlatsController < ApplicationController
   def flat_params
     params.require(:flat).permit(:address, :description, :price_per_day, :photo)
   end
-
 
 end
