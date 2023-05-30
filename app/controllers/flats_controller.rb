@@ -4,6 +4,7 @@ class FlatsController < ApplicationController
     @flats = Flat.all
   end
 
+
   def new
     @flat = Flat.new # Needed to instantiate the form_with
   end
@@ -15,6 +16,17 @@ class FlatsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+ 
+  def show
+    @flat = Flat.find(params[:id])
+  end
+
+  def destroy
+    @flat = Flat.find(params[:id])
+    @flat.destroy
+    redirect_to flats_path(@flat.list), notice: "Flat was successfully removed."
   end
 
   private
