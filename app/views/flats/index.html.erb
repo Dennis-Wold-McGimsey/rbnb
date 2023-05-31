@@ -5,6 +5,10 @@
   </div>
 </div>
 
+<div class="whole_grid">
+  <% @flats.each do |flat|%>
+    <%= link_to flat_path(flat) do %>
+
 
 <div class="index-container">
   <div class="list-of-flats">
@@ -16,6 +20,12 @@
       <% end %>
     </div>
   </div>
+
+      <%= flat.description %>
+    </div>
+    <% end %>
+  <% end %>
+
 </div>
 
 <hr>

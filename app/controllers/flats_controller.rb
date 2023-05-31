@@ -3,6 +3,12 @@ class FlatsController < ApplicationController
   def index
     @flats = Flat.all
 
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def my_flats
@@ -37,7 +43,7 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:address, :description, :price_per_day, :guests_allowed)
+    params.require(:flat).permit(:address, :description, :price_per_day, :guests_allowed, :photo)
   end
 
 end
