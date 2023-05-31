@@ -8,13 +8,13 @@
 
 <div class="index-container">
   <div class="list-of-flats">
-    <ul class="grid-list">
+    <div class="grid-list cards">
       <% @flats.each do |flat| %>
-      <li>
-        <%= link_to flat.address, flat_path(flat)%>
+      <li style="background-image: url('<%= flat.photo.key %>')">
+        <%= link_to flat.description, flat_path(flat)%>
       </li>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>
 
