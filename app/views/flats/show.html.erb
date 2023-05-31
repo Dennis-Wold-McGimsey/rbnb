@@ -1,18 +1,21 @@
+<div class="d-flex justify-content-center">
+  <div class="page_body">
 
-<h1 class="display-4"><%= @flat.description %></h1>
-<p class="display-6"><%= @flat.address %></p>
-<p> Price per day : <%= @flat.price_per_day %></p>
-<p>Guests allowed : <%= @flat.guests_allowed %></p>
+    <h1 class="display-4"> <%= @flat.description %></h1>
+    <p class="display-6"> <%= @flat.address %></p>
+    <p> Price per day : <%= @flat.price_per_day%></p>
+    <p> Guests allowed : <%= @flat.guests_allowed %></p>
 
-<div>
-<% if @flat.photo.present? %>
-  <div class="user_flat_images" style="background-image: url('<%= cl_image_path @flat.photo.key, height: 300, crop: :fill %>')"></div>
-<% end %>
-  <hr>
+    <div>
+      <div class="user_flat_images" style="background-image: url('https://res.cloudinary.com/dzjmpq6u1/image/upload/c_fill,h_300/v1/production/jss4qr8l6s6vzp9trwvzbsl7susk')"></div>
+
+        <p class="notice"></p>
+        <p class="alert"></p>
+        </div>
+
+  <%= link_to "Delete Flat", flat_path(@flat), class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+  <%=  link_to "Back to Home", flats_path, class: "btn btn-primary"%>
+
+  </div>
 </div>
-
-<%= link_to "Delete Flat", flat_path(@flat), class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<hr>
-
-<%=  link_to "Back to Home", flats_path, class: "btn btn-primary"%>
-<hr>
