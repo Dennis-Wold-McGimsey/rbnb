@@ -11,3 +11,11 @@
   width: 40px;
   border-style: double;
 }
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
