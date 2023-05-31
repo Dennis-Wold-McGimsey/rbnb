@@ -4,3 +4,12 @@
   height: 400px;
   width: 500px;
 }
+
+.back_images {
+  background-image: asset-url('logo.png');
+  background-size: fill;
+  background-position: center;
+  height: 200px;
+  background:  no-repeat;
+
+}

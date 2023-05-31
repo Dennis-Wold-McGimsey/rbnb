@@ -6,25 +6,26 @@
 </div>
 
 <div class="index-container">
-  <div class="list-of-flats">
-    <div class="grid-list cards">
-      <% @flats.each do |flat| %>
-      <div style="background-image: url('<%= flat.photo.key %>')">
-        <%= link_to flat.description, flat_path(flat)%>
-      </div>
+  <div class="grid-list">
+    <% @flats.each do |flat| %>
+      <% if flat.photo.present? %>
+        <div class="back_images" style="background-image: url('<%= cl_image_path flat.photo.key %>')">
+          <%= link_to flat.description, flat_path(flat)%>
+        </div>
+      <% else %>
+        <div class="back_images" style="background-image: url('<%= image_path "logo.png" %>')">
+          <%= link_to flat.description, flat_path(flat)%>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
 
 
-
-
-
-
-
-
+<div class="container mt-4">
 <hr>
-<%= link_to "Create a flat", new_flat_path, class: "btn_red" %>
+<%= link_to "Create a flat", new_flat_path, class: "m-0 btn_red" %>
 <hr>
-<%= link_to "See your flats",my_flats_path, class: "btn_red" %>
+<%= link_to "See your flats",my_flats_path, class: "m-0 btn_red" %>
+  </div>
+
