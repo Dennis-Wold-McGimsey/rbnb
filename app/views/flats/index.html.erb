@@ -9,10 +9,23 @@
   <% @flats.each do |flat|%>
     <%= link_to flat_path(flat) do %>
 
+
+<div class="index-container">
+  <div class="list-of-flats">
+    <div class="grid-list cards">
+      <% @flats.each do |flat| %>
+      <li style="background-image: url('<%= flat.photo.key %>')">
+        <%= link_to flat.description, flat_path(flat)%>
+      </li>
+      <% end %>
+    </div>
+  </div>
+
       <%= flat.description %>
     </div>
     <% end %>
   <% end %>
+
 </div>
 
 <hr>
