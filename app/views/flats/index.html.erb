@@ -9,13 +9,15 @@
   <div class="grid-list">
     <% @flats.each do |flat| %>
       <% if flat.photo.present? %>
+       <%= link_to flat_path(flat) do%>
         <div class="back_images" style="background-image: url('<%= cl_image_path flat.photo.key %>')">
-          <%= link_to flat.description, flat_path(flat)%>
         </div>
+        <% end %>
       <% else %>
+        <%= link_to flat_path(flat) do %>
         <div class="back_images" style="background-image: url('<%= image_path "logo.png" %>')">
-          <%= link_to flat.description, flat_path(flat)%>
-        </div>
+         </div>
+          <% end %>
       <% end %>
     <% end %>
   </div>
@@ -27,5 +29,4 @@
 <%= link_to "Create a flat", new_flat_path, class: "m-0 btn_red" %>
 <hr>
 <%= link_to "See your flats",my_flats_path, class: "m-0 btn_red" %>
-  </div>
-
+</div>
