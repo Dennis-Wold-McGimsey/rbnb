@@ -1,0 +1,16 @@
+<h1> bookings list here later</h1>
+
+
+<div class="container">
+  <ul>
+    <% @bookings.each do |booking| %>
+     <%= link_to "Your current booking", flat_booking_path(booking.flat, booking) %>
+     <%= booking.flat.address %></strong></p>
+        Start date: </strong><%= booking.start_date %></p>
+        End date: </strong><%= booking.end_date %></p>
+
+    </ul>
+  <% end %>
+</div>
+
+<%=  link_to "Go back to Home page", flats_path, class: "btn_red" %>
