@@ -5,8 +5,6 @@
   </div>
 </div>
 
-
-
 <div class="index-container">
   <div class="grid-list">
     <% @flats.each do |flat| %>
@@ -22,9 +20,12 @@
     <% end %>
   </div>
 </div>
+
+
 <div class="container mt-4">
-  <hr>
-  <%= link_to "Create a flat", new_flat_path, class: "m-0 btn btn-gradient" %>
-  <hr>
-  <%= link_to "See your flats",my_flats_path, class: "m-0 btn btn-gradient"%>
-</div>
+<hr>
+<%= link_to "Create a flat", new_flat_path, class: "m-0 btn_red" %>
+<hr>
+<%= link_to "See your flats",my_flats_path, class: "m-0 btn_red" %>
+  </div>
+

@@ -12,13 +12,16 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
   </head>
-<div>
-  <body>
-    <%= render "shared/navbar" %>
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  </body>
-
-</div>
+  <div>
+    <body>
+      <div class="navbar-container">
+        <%= render "shared/navbar" %>
+      </div>
+      <div class="page_body">
+      <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      </div>
+    </body>
+  </div>
 </html>
