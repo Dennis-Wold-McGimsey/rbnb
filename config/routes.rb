@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root to: "flats#index"
+  #root to: "pages#home"
 
   resources :flats
   get "my_flats", to: "flats#my_flats"

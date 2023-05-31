@@ -7,6 +7,7 @@ ruby "3.1.2"
 gem "rails", "~> 7.0.5"
 
 gem "devise"
+gem "pundit"
 
 gem "cloudinary"
 
