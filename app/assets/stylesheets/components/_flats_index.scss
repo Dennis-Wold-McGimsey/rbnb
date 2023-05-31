@@ -1,0 +1,26 @@
+
+.index-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.grid-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.grid-list li {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
