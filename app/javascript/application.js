@@ -2,4 +2,4 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-import "mapbox-gl/dist/mapbox-gl.css"
+// import "mapbox-gl/dist/mapbox-gl.css"
