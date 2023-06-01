@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @flat = Flat.find(params[:flat_id])
-    @booking.flat = @flatrails 
+    @booking.flat = @flat
 
     if @booking.save
       redirect_to @flat, notice: "Booking was successful! Enjoy your flat."

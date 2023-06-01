@@ -5,12 +5,16 @@ Rails.application.routes.draw do
   #root to: "pages#home"
 
   resources :flats do
-    resources :bookings
+    resources :bookings, except: :destroy
   end
 
+  resources :bookings, only: :destroy
   get "my_bookings", to: "bookings#my_bookings"
 
   get "my_flats", to: "flats#my_flats"
+
+
+
 
 
 
