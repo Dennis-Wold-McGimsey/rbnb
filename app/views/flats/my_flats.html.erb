@@ -1,12 +1,12 @@
-
-
 <div class="container">
-  <ul>
-    <% @flats.each do |flat| %>
-    <li>
-    <%= link_to flat.address, flat_path(flat)%>
-    </li>
-    <% end %>
-  </ul>
-
-  <%=  link_to "Go back to Home page", flats_path, class: "btn_red" %>
+  <p>Here are your flats</p>
+  <div class="container">
+    <ul>
+      <% @flats.each do |flat| %>
+      <li>
+      <%= link_to flat.address, flat_path(flat)%>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
