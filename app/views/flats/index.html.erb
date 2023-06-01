@@ -7,7 +7,7 @@
 </div>
 
 <div class="index-container" >
-  <div class="grid-list">
+  <div class="grid-list column">
     <% @flats.each do |flat| %>
       <% if flat.photo.present? %>
        <%= link_to flat_path(flat) do%>
@@ -22,4 +22,16 @@
       <% end %>
     <% end %>
   </div>
+  <div id="map" class="column" style="width: 100%; height: 90vh;"></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY3B0bGVnbyIsImEiOiJjbGliZ2dsYnAwOWYzM2x1a2I0Z2Z5NWpnIn0.4YgTAzEQhNrHoAIyxPftUg';
+
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [5, 46],
+      zoom: 3
+    });
+  </script>
+
 </div>

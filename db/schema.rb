@@ -56,14 +56,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_01_020633) do
 
   create_table "flats", force: :cascade do |t|
     t.string "address"
+    t.string "city"
     t.string "description"
     t.integer "price_per_day"
     t.string "availability"
     t.string "photos_id"
     t.string "guests_allowed"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.float "latitude"
     t.float "longitude"
     t.index ["user_id"], name: "index_flats_on_user_id"
