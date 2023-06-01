@@ -1,18 +1,39 @@
 
-<h1 class="display-4"><%= @flat.description %></h1>
-<p class="display-6"><%= @flat.address %></p>
-<p> Price per day : <%= @flat.price_per_day %></p>
-<p>Guests allowed : <%= @flat.guests_allowed %></p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="border p-4 mb-4 card-shadow card">
 
-<div>
-<% if @flat.photo.present? %>
-  <div class="user_flat_images" style="background-image: url('<%= cl_image_path @flat.photo.key, height: 300, crop: :fill %>')"></div>
-<% end %>
-  <hr>
-</div>
+        <p class="lead mb-2" style="text-align: left;"><strong class="fw-bold">Flast description : </strong><%= @flat.description %></p>
+        <p class="lead mb-2" style="text-align: left;"><strong class="fw-bold">Address : </strong><%= @flat.address %></p>
+        <p class="lead mb-2" style="text-align: left;"><strong class="fw-bold">Price per day : </strong><%= @flat.price_per_day %></p>
+        <p class="lead mb-2" style="text-align: left;"><strong class="fw-bold">Guests allowed : </strong><%= @flat.guests_allowed %></p>
+        </div>
+     
+
 
 <%= link_to "Delete Flat", flat_path(@flat), class: "btn_red", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <hr>
 
 <%=  link_to "Back to Home", flats_path, class: "btn_red"%>
 <hr>
+
+      <div>
+        <% if @flat.photo.present? %>
+          <div class="user_flat_images" style="background-image: url('<%= cl_image_path @flat.photo.key, height: 300, crop: :fill %>')"></div>
+        <% end %>
+      </div>
+
+      <div class="d-flex justify-content-start">
+        <% if current_user == @flat.user %>
+          <%= link_to "Delete Flat", flat_path(@flat), class: "btn btn-dark m-2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <% end %>
+          <hr>
+
+          <%=  link_to "Back to Home", flats_path, class: "btn btn-success m-2"%>
+          <hr>
+      </div>
+    </div>
+   </div>
+ </div>
+

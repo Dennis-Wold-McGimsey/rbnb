@@ -36,9 +36,14 @@ class FlatsController < ApplicationController
 
   def destroy
     @flat = Flat.find(params[:id])
-    @flat.destroy
-    redirect_to flats_path(@flat), notice: "Flat was successfully removed."
+    if @flat.user == current_user
+      @flat.destroy
+      redirect_to flats_path(@flat), notice: "Flat was successfully removed."
+    else
+      redirect_to flats_path, alert: "Vous n'êtes pas autorisé à supprimer cet appartement."
+    end
   end
+
 
   private
 
