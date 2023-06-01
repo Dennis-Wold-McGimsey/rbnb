@@ -9,14 +9,7 @@
         <p class="lead mb-2" style="text-align: left;"><strong class="fw-bold">Price per day : </strong><%= @flat.price_per_day %></p>
         <p class="lead mb-2" style="text-align: left;"><strong class="fw-bold">Guests allowed : </strong><%= @flat.guests_allowed %></p>
         </div>
-     
 
-
-<%= link_to "Delete Flat", flat_path(@flat), class: "btn_red", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<hr>
-
-<%=  link_to "Back to Home", flats_path, class: "btn_red"%>
-<hr>
 
       <div>
         <% if @flat.photo.present? %>
@@ -36,4 +29,3 @@
     </div>
    </div>
  </div>
-
