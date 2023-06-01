@@ -17,30 +17,38 @@
 
   <%= simple_form_for(@flat) do |f| %>
 
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <%= f.input :address, label_html: { class: "form-label required" } %>
-      </div>
+  <div class="mb-3">
+     <%= f.input :address, label_html: { class: "form-label required" } %>
+  </div>
 
-      <div class="col-md-6 mb-3">
-        <%= f.input :description, label_html: { class: "form-label required" } %>
-      </div>
+  <div class="row">
+
+    <div class="col-md-6 mb-3">
+       <%= f.input :description, label_html: { class: "form-label required" } %>
     </div>
 
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <%= f.input :price_per_day, label_html: { class: "form-label required" }%>
-        </div>
-
-        <div class="col-md-6 mb-3">
-          <%= f.input :guests_allowed, label_html: { class: "form-label required" } %>
-        </div>
-      </div>
-    <div class="mb-3">
-      <%= f.input :photo, as: :file %>
+     <div class="col-md-6 mb-3">
+      <%= f.input :city, label_html: { class: "form-label required" } %>
     </div>
 
-    <%= f.submit class:" m-3 btn btn-dark m-2" %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <%= f.input :price_per_day, label_html: { class: "form-label required" }%>
+   </div>
+
+     <div class="col-md-6 mb-3">
+       <%= f.input :guests_allowed, label_html: { class: "form-label required" } %>
+      </div>
+  </div>
+
+  <div class="mb-3">
+    <%= f.input :photo, as: :file %>
+  </div>
+
+  <%= f.submit class:" m-3 btn btn-dark m-2" %>
 
   <% end %>
+  
 </div>

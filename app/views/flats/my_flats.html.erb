@@ -1,12 +1,12 @@
-<div class="container">
-  <p>Here are your flats</p>
-  <div class="container">
-    <ul>
+<div class="container  ">
+  <h2 >Here are your flats</h2>
+  <div class="container justify-content-center align-items-center vh-50">
+    <ol class="list-group">
       <% @flats.each do |flat| %>
-      <li>
+      <li >
       <%= link_to flat.address, flat_path(flat)%>
       </li>
       <% end %>
-    </ul>
+    </ol>
   </div>
 </div>

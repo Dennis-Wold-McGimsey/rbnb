@@ -14,8 +14,8 @@ puts "Creating users..."
 user_1 = User.create(email: "chris@lewagon.com", password: "123123")
 
 puts "Creating flats..."
-flat_1 = {address: "20 Villa Chevreuse", description: "Sunny flat near Paris ", price_per_day: 50, user: user_1, guests_allowed:5}
-flat_2 = {address: "2 Rua do Conde de Redonde", description: "Enjoy Lisbonne", price_per_day: 30, user: user_1, guests_allowed:5}
+flat_1 = {address: "20 Villa Chevreuse", city: "Paris", description: "Sunny flat near Paris ", price_per_day: 50, user: user_1, guests_allowed:5}
+flat_2 = {address: "2 Rua do Conde de Redonde", city: "Lisboa", description: "Enjoy Lisbonne", price_per_day: 30, user: user_1, guests_allowed:5}
 
 [flat_1, flat_2].each do |attributes|
   flat = Flat.create!(attributes)
