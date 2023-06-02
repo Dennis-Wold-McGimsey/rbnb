@@ -1,8 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  
 }
+
+.navbar-expand-sm .navbar-collapse {
+  display: flex;
+  flex-basis: auto;
+  justify-content: space-between;
+}
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -20,4 +26,8 @@
   right: 0;
   z-index: 100;
 
+}
+
+.navbar-nav {
+  align-items:center;
 }

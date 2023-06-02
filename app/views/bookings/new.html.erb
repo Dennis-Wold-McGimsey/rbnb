@@ -4,6 +4,7 @@
   </div>
 </div>
 
+
 <div class="container d-flex justify-content-center vh-50 mt-4 ">
   <%= simple_form_for [@flat, @booking] do |f| %>
     <div , class="mt-5 " >
@@ -12,8 +13,9 @@
     <div class="mt-5 mb-4">
      <%= f.input :end_date, html5: true%>
     </div>
-    <%= f.submit class: "m-3 btn btn-dark m-2" %>
+    <%= f.submit "Book this flat!", class: "m-3 btn btn-dark m-2" %>
     <% end %>
 </div>
 
-  <%= link_to "See your bookings", my_bookings_path, class: "m-3 btn btn-dark m-2" %>
+
+
