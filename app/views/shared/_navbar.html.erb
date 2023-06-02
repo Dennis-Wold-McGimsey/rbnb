@@ -12,11 +12,14 @@
       <div class="row justify-content-center">
         <div class="col-sm-8 w-100">
             <%= form_with url: flats_path, method: :get, class: "d-flex" do %>
-              <%= text_field_tag :query,
-                    params[:query],
-                    class: "form-control",
-                    placeholder: "Enter a city to search in"
-                %>
+                <div class="map-auto-complete" data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
+                <%= text_field_tag :query,
+                      params[:query],
+                      class: "form-control d-none",
+                      placeholder: "Enter a city to search in",
+                      data: {address_autocomplete_target:"address"}
+                  %>
+                </div>
               <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
             <% end %>
           </div>
