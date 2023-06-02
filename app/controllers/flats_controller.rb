@@ -9,6 +9,10 @@ class FlatsController < ApplicationController
         lng: flat.longitude
       }
     end
+
+    if params[:query].present?
+      @flats = @flats.where("city ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def my_flats
