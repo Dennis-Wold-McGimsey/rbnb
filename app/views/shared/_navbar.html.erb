@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon " style="margin-bottom: 0">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom " style="margin-bottom: 0">
   <div class="container-fluid">
     <%= link_to flats_path, class: "navbar-brand" do %>
       <%= image_tag "https://logopond.com/logos/5d50b7e780862243f64312c7c282e654.png" %>
@@ -8,11 +8,23 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+    <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+      <div class="row justify-content-center">
+        <div class="col-sm-8 w-100">
+            <%= form_with url: flats_path, method: :get, class: "d-flex" do %>
+              <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control",
+                    placeholder: "Enter a city to search in"
+                %>
+              <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item active me-4">
-            <%= link_to "Menu", flats_path, class: "btn btn-outline-dark m-2 btn-rounded ms-4" %>
+            <%= link_to "Home", flats_path, class: "btn btn-outline-dark m-2 btn-rounded ms-4" %>
           </li>
           <li class="nav-item me-4">
             <%= link_to "Create a flat", new_flat_path, class: "btn btn-outline-dark m-2 btn-rounded ms-4" %>
@@ -24,12 +36,12 @@
           <%= link_to "My bookings", my_bookings_path, class: "btn btn-outline-dark m-2 btn-rounded ms-4" %>
           </li>
           <li class="nav-item dropdown">
-          <a href="#" class="ms-4 avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Profile", "#", class: "dropdown-item" %>
+              <%= link_to "Settings", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
