@@ -11,7 +11,8 @@
     <% @flats.each do |flat| %>
       <% if flat.photo.present? %>
        <%= link_to flat_path(flat) do%>
-        <div class="back_images" style="background-image: url('<%= cl_image_path flat.photo.key %>')">
+        <div class="hover back_images" style="background-image: url('<%= cl_image_path flat.photo.key %>')">
+        <p class="city-name hidden fade-in"><%= flat.city %></p>
         </div>
         <% end %>
       <% else %>
@@ -24,3 +25,17 @@
   </div>
   <div id="map" class="column" style="width: 100%; height: 90vh;" data-controller="map"  data-map-markers-value="<%= @markers.to_json %>"  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
+
+<script>
+  const backImages = document.querySelectorAll('.back_images');
+
+  backImages.forEach((backImage) => {
+    backImage.addEventListener('mouseover', () => {
+      backImage.querySelector('.city-name').classList.remove('hidden');
+    });
+
+    backImage.addEventListener('mouseout', () => {
+      backImage.querySelector('.city-name').classList.add('hidden');
+    });
+  });
+</script>
