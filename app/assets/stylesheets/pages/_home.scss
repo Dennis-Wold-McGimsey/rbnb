@@ -10,15 +10,13 @@ footer {
   font-size: 24px;
   text-align: center;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: all 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 1s ease;
+  text-decoration: none !important;
 }
 
-.hidden {
-  display: none;
-}
 
 .city-name:hover {
-  background: rgba(0, 0, 0, 0.8);
-
+  background: rgba(0, 0, 0, 0.2);
+  text-decoration: none;
 }
