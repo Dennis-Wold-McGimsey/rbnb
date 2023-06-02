@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.flat = @flat
 
     if @booking.save
-      redirect_to @flat, notice: "Booking was successful! Enjoy your flat."
+      redirect_to my_bookings_path, notice: "Booking was successful! Enjoy your flat."
     else
       render :new, status: :unprocessable_entity
     end

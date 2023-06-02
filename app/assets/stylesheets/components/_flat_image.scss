@@ -1,8 +1,11 @@
 .user_flat_images {
   display: flex;
   background: no-repeat;
-  height: 400px;
-  width: 500px;
+  height: 300px;
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+
 }
 
 .back_images {
