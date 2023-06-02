@@ -20,12 +20,12 @@
 
       <div class="d-flex justify-content-start">
         <% if current_user == @flat.user %>
-          <%= link_to "Delete Flat", flat_path(@flat), class: "btn btn-dark m-2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <%= link_to "Delete Flat", flat_path(@flat), class: "m-3 btn btn-dark m-2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           <% end %>
           <hr>
 
-          <%= link_to "Book this flat", new_flat_booking_path(@flat), class: "btn btn-success m-2" %>
-          <%=  link_to "Back to Home", flats_path, class: "btn btn-success m-2"%>
+          <%= link_to "Book this flat", new_flat_booking_path(@flat), class: "m-3 btn btn-dark m-2" %>
+          <%=  link_to "Back to Home", flats_path, class: "m-3 btn btn-dark m-2"%>
           <hr>
       </div>
     </div>
